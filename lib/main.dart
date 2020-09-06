@@ -303,11 +303,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         height: 200,
                         child: ListView.builder(itemCount:names.length!=0?names.length:0,itemBuilder: (context,index)=>
-                            Container(
-                              color: tileColor[index],
-                              child: ListTile(
-                                title: Center(child: Text(names[index])),
-                              ),
+                            Column(
+                              children: <Widget>[
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                                    color: tileColor[index],
+                                  ),
+                                  child: ListTile(
+                                    title: Center(child: Text(names[index])),
+                                  ),
+                                ),
+                                Divider(thickness: 1.5,),
+                              ],
                             )
                         ),
                       ),
